@@ -1,5 +1,5 @@
 # Encrypt data example
-Shows how to encrypt data held in public space
+Shows how to encrypt data held in public space, for analysis in R
 
 The example data is from my Master's thesis. You can obtain all the details at the GitHub repository:
 
