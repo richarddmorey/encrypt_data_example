@@ -15,5 +15,3 @@ levels(exp1$cond) = c("nw","ww","wn","nn")
 ## Accuracy by stim
 aggregate(acc ~ stim, mean, data = exp1)
 
-
-

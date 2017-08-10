@@ -1,10 +1,10 @@
 require(sodium)
+# See https://cran.r-project.org/web/packages/sodium/vignettes/intro.html
 
-## You can make this whatever you want, until you're ready to share
-# key_string = ""
 
 ## When you're ready to share, just release the correct passphrase
-## in the load_data script.
+## in the load_data.R script. Alternatively, you could load 
+## this from a local file that you later share others.
 key_string = "This is a secret passphrase"
 
 ## Hash the key (as when encrypted)
@@ -14,10 +14,10 @@ key = hash(charToRaw(key_string))
 nonce_char = scan("nonce", what = "character")
 nonce = hex2bin(paste(nonce_char, collapse = ""))
 
-## Read locally
-cipher = readRDS("exp1_encrypted.rds")
 ## Read from GitHub
-# cipher = readRDS(url(""))
+gh_con = url("https://github.com/richarddmorey/encrypt_data_example/blob/master/exp1_encrypted.rds?raw=true")
+cipher = readRDS(gzcon(gh_con))
+close(gh_con)
 
 ## Decrypt and unserialize
 s_dat = data_decrypt(cipher, key, nonce)
