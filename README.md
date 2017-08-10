@@ -19,4 +19,8 @@ If these are true, this example is for you.
 
 ### What does this example show?
 
+* **How to encrypt a file for sharing**: See `encrypt_it.R`, which shows how to create an encrypted file with a passphrase, which you can then share on GitHub or OSF. The file that is encrypted, `exp1.txt`, is linked in the script.
+* **How to decrypt a file for analysis**: See `load_data.R` for an example data loading script that decrypts the file directly from GitHub. Note that in this file, passphrase is defined so that you can load the data. You would not share this until you were ready. This repository is in a "public-sharing-ready" state.
+
+Once the data is loaded using the `load_data.R` script, one can analyse it as normal. For someone simply running the script with the correct passphrase, the encryption is completely transparent.
 
