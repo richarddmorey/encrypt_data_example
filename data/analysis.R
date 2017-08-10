@@ -1,4 +1,8 @@
-source('load_data.R')
+## Source locally when developing and key is not shared
+# source("load_data.R")
+
+## Source from GitHub after key is shared
+source("https://github.com/richarddmorey/encrypt_data_example/blob/master/data/load_data.R?raw=true")
 
 colnames(exp1) = c("sub", "blk", "trl", "cond", "set", "stim", "resp", "acc", "rt")
 
