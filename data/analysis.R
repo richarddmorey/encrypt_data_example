@@ -1,10 +1,10 @@
-## Source locally when developing and key is not shared
-# source("load_data.R")
+## When you're ready to share, just release the correct passphrase
+## Before you're ready to share, you could load 
+## this from a local file that you later share others.
+key_string = "This is a secret passphrase"
 
-## Source from GitHub after key is shared
+## Source from GitHub
 source("https://github.com/richarddmorey/encrypt_data_example/blob/master/data/load_data.R?raw=true")
-## Source from OSF after key is shared
-# source("https://osf.io/73thx/download?version=2")
 
 colnames(exp1) = c("sub", "blk", "trl", "cond", "set", "stim", "resp", "acc", "rt")
 
