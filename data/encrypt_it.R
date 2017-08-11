@@ -9,7 +9,8 @@ key = hash(charToRaw(key_string))
 ## Read the data and serialize it to prepare it for encryption
 ## The file is taken from here:
 ## https://github.com/richarddmorey/absoluteJudgmentCalibration/tree/master/data
-dat = read.table("exp1.txt")
+## You can replace with your own local file
+dat = read.table("https://github.com/richarddmorey/absoluteJudgmentCalibration/blob/master/data/exp1.txt?raw=true")
 msg = serialize(dat, NULL)
 
 ## Create a nonce file to be shared with the encrypted file
@@ -34,3 +35,20 @@ if(!file.exists("nonce")){
   stop("nonce file exists. Not overwriting nonce or data.")
 }
 
+########
+## Check to make sure encryption worked
+
+rm("nonce","cipher","msg","key")
+
+## Hash the key 
+key = hash(charToRaw(key_string))
+
+## Read in the nonce
+nonce_char = scan("nonce", what = "character")
+nonce = hex2bin(paste(nonce_char, collapse = ""))
+
+cipher = readRDS("exp1_encrypted.rds")
+s_dat = data_decrypt(cipher, key, nonce)
+exp1 = unserialize(s_dat)
+
+stopifnot(identical(exp1, dat))
