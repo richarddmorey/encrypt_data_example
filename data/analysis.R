@@ -3,6 +3,8 @@
 
 ## Source from GitHub after key is shared
 source("https://github.com/richarddmorey/encrypt_data_example/blob/master/data/load_data.R?raw=true")
+## Source from OSF after key is shared
+# source("https://osf.io/73thx/download?version=2")
 
 colnames(exp1) = c("sub", "blk", "trl", "cond", "set", "stim", "resp", "acc", "rt")
 
