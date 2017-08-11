@@ -3,7 +3,7 @@
 ## this from a local file that you later share others.
 key_string = "This is a secret passphrase"
 
-## Source from GitHub
+## Load data from GitHub
 source("https://github.com/richarddmorey/encrypt_data_example/blob/master/data/load_data.R?raw=true")
 
 colnames(exp1) = c("sub", "blk", "trl", "cond", "set", "stim", "resp", "acc", "rt")

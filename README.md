@@ -18,6 +18,11 @@ What am I assuming?
 
 If these are true, this example is for you.
 
+The GitHub version is here: https://github.com/richarddmorey/encrypt_data_example
+
+The OSF version is here: https://osf.io/vqfw8/
+
+
 ### What does this example show?
 
 * **How to encrypt a file for sharing**: See `data/encrypt_it.R`, which shows how to create an encrypted file with a passphrase, which you can then share on GitHub or OSF. The file that is encrypted, `exp1.txt`, is linked in the script.
